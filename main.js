@@ -9,21 +9,40 @@
 // Output the HTML strings with classes to the DOM that you can style with CSS.
 // Refactor "makeFrontMessage" to return something more elaborate.
 
-const CardMaker = {
-    makeFrontMessage: function(string) {
-      return `<h2>${string}</h2>`
-      // console.log(this.FrontMessage)
-    }
 
-    // makeBackMessage: function(string) {
-    //     return `<h2>${string}</h2>`
-    //   };
-  }
-  
-  //Refactor this to link this object to cardMaker
+let domText = document.getElementById("greeting-card");
+
+const CardMaker = {
+    frontMessage: function(string) {
+      return `<h2>${this.frontMessage}</h2>` 
+      // console.log(this.FrontMessage)
+    },
+
+    insideMessage: function(string) {
+        return `<h2>${this.insideMessage}</h2>`
+        // console.log(this.BackMessage)
+      }
+  };
+
+CardMaker.prototype.greeting = function() {
+    return "<div>" + this.frontMessage + this.insideMessage + "</div>"
+  };
+
 const BirthdayCard = Object.create(CardMaker);
-BirthdayCard.FrontMessage = "Happy Birthday!"
-BirthdayCard.makeFrontMessage()
+BirthdayCard.frontMessage = "Happy Birthday!"
+BirthdayCard.backMessage = "Eat, drink and drink some more.....BUT please stop drinking when you think walking around in your birthday suit in public would be good idea to celebrate the day of your birth."
+
+domText.innerHTML = BirthdayCard.frontMessage();
+domText.innerHTML= BirthdayCard.backMessage();
+
+// ==== Refactor this to link this object to cardMaker =====
+// const BirthdayCard = Object.create(CardMaker);
+
+// BirthdayCard.makeFrontMessage()
+// BirthdayCard.makeBackMessage()
+
+
+// .document.getElementById("birthday-front").innerHTML
 
 
 
