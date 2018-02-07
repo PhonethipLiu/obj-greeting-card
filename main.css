@@ -2,11 +2,6 @@ body {
     font-family: 'Gill Sans MT', sans-serif;
 }
 
-h1 {
-    font-family: Calibri, sans-serif;
-}
-
-h2 {
-    font-family: 'Gill Sans MT', sans-serif;
-    font-style: italic;
+h1, h2 {
+    font-family: Helvetica, sans-serif;
 }
