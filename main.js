@@ -10,12 +10,25 @@
 // Refactor "makeFrontMessage" to return something more elaborate.
 
 //====== Let's see it in the DOM ======//
-const cardSection = document.getElementsByTagName("SECTION");
-// var addClass = cardSection.className += "bday-card";
-// cardSection.style.backgroundColor = "lightgray";
+let cardDiv = document.getElementById("card");
+// var addClass = cardDiv.className("bday-card");
+// cardDiv.style.backgroundColor = "lightgray";
 // var paragraph = document.createAttribute("");
-// cardSection.className = "colorBox";
+// cardDiv.className = "colorBox";
 // var div = document.getElementsByTagName("DIV")[0].className;
+// var div = document.createElement('DIV');
+// document.body.appendChild(div);
+// var paragraph = document.createElement("p");
+// var newNode = document.createTextNode("This is new.");
+// paragraph.appendChild(node);
+// var element = document.getElementById("div1");
+// element.appendChild(para);
+// function paragraphStyle() {
+//   let paraColor = document.getElementsByTagName("p");
+//   for (let i = 0; i < paraColor.length; i++) {
+//       paraColor[1].style.color = "gray";
+//   }
+// }
 
 //====== constructor for CardMaker Object ======//
 //Refactor "makeFrontMessage" to return something more elaborate.
@@ -43,8 +56,9 @@ Birthday.insideMessage = "Eat, drink and drink some more.....BUT please stop dri
 //mvp Output two messages, one from the front and one from the inside of the card, to the console.
 console.log(Birthday.frontMessage, Birthday.insideMessage);
 //Output the HTML strings with classes to the DOM that you can style with CSS.
-cardSection.innerHTML += "<div><h2>" + Birthday.frontMessage  + "</h2>" + "<p>" + Birthday.insideMessage + "</p></div>";
-// cardDiv.style.backgroundColor = "lightgray"; 
+cardDiv.innerHTML += "<div><h2>" + Birthday.frontMessage  + "</h2>" + "<p>" + Birthday.insideMessage + "</p></div>";
+
+// paragraphStyle(paraColor)
 
 //============ child birthday card ==============//
 //Make additional objects that allow more specific card types, such as children's birthday and adult's birthday, that inherit from a BirthdayCard object.
@@ -54,16 +68,16 @@ childBirthday.insideMessage = "May the fork be with you as you eat your cake.";
 //mvp Output two messages, one from the front and one from the inside of the card, to the console.
 console.log(childBirthday.frontMessage, childBirthday.insideMessage);
 //Output the HTML strings with classes to the DOM that you can style with CSS.
-cardSection.innerHTML += "<div><h2>" + childBirthday.frontMessage  + "</h2>" + "<p>" + childBirthday.insideMessage + "</p></div>";
+cardDiv.innerHTML += "<div><h2>" + childBirthday.frontMessage  + "</h2>" + "<p>" + childBirthday.insideMessage + "</p></div>";
 
 //============ adult birthday card ==============//
 const adultBirthday = Object.create(Birthday);
-adultBirthday.frontMessage = "Happy Birthday my young Padawan!";
-adultBirthday.insideMessage = "May the fork be with you as you eat your cake.";
+adultBirthday.frontMessage = "LORDY! LORDY! Look who turned 40!";
+adultBirthday.insideMessage = "Don't let age slow you down on your birthday. Party like a rock star; recover like a boss and take the next day off. ";
 //mvp Output two messages, one from the front and one from the inside of the card, to the console.
 console.log(adultBirthday.frontMessage, adultBirthday.insideMessage);
 //Output the HTML strings with classes to the DOM that you can style with CSS.
-cardSection.innerHTML += "<div><h2>" + adultBirthday.frontMessage  + "</h2>" + "<p>" + adultBirthday.insideMessage + "</p></div>";
+cardDiv.innerHTML += "<div><h2>" + adultBirthday.frontMessage  + "</h2>" + "<p>" + adultBirthday.insideMessage + "</p></div>";
  
 
 
@@ -77,7 +91,7 @@ Anniversary.insideMessage = "Happy Anniversary baby! Thank you for not leaving m
 //mvp Output two messages, one from the front and one from the inside of the card, to the console.
 console.log(Anniversary.frontMessage, Anniversary.insideMessage);
 //Output the HTML strings with classes to the DOM that you can style with CSS.
-cardSection.innerHTML += "<div><h2>"+ Anniversary.frontMessage + "</h2>" + "<p>" + Anniversary.insideMessage + "</p></div>";
+cardDiv.innerHTML += "<div><h2>"+ Anniversary.frontMessage + "</h2>" + "<p>" + Anniversary.insideMessage + "</p></div>";
 
 
 // ===== Valentine Card ======== //
@@ -89,7 +103,7 @@ Valentine.insideMessage = "Life is sweeter having you in my life. Happy Valentin
 //mvp Output two messages, one from the front and one from the inside of the card, to the console.
 console.log(Valentine.frontMessage, Valentine.insideMessage);
 //Output the HTML strings with classes to the DOM that you can style with CSS.
-cardSection.innerHTML += "<div><h2>" + Valentine.frontMessage + "</h2>" + "<p>" + Valentine.insideMessage + "</p></div>";
+cardDiv.innerHTML += "<div><h2>" + Valentine.frontMessage + "</h2>" + "<p>" + Valentine.insideMessage + "</p></div>";
 
 
 
