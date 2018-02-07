@@ -24,9 +24,9 @@ let cardDiv = document.getElementById("card");
 // var element = document.getElementById("div1");
 // element.appendChild(para);
 // function paragraphStyle() {
-//   let paraColor = document.getElementsByTagName("p");
+// let paraStyle = document.getElementsByTagName("p");
 //   for (let i = 0; i < paraColor.length; i++) {
-//       paraColor[1].style.color = "gray";
+ let changeParaStyle = cardDiv[1].style.color = "gray";
 //   }
 // }
 
@@ -52,13 +52,13 @@ const CardMaker = {
 const Birthday = Object.create(CardMaker);
 Birthday.frontMessage = "Happy Birthday!";
 Birthday.insideMessage = "Eat, drink and drink some more.....BUT please stop drinking when you think walking around in your birthday suit in public would be good idea to celebrate the day of your birth.";
-
+// cardDiv[1].style.color = "gray";
 //mvp Output two messages, one from the front and one from the inside of the card, to the console.
 console.log(Birthday.frontMessage, Birthday.insideMessage);
 //Output the HTML strings with classes to the DOM that you can style with CSS.
 cardDiv.innerHTML += "<div><h2>" + Birthday.frontMessage  + "</h2>" + "<p>" + Birthday.insideMessage + "</p></div>";
 
-// paragraphStyle(paraColor)
+
 
 //============ child birthday card ==============//
 //Make additional objects that allow more specific card types, such as children's birthday and adult's birthday, that inherit from a BirthdayCard object.
