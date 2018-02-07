@@ -26,7 +26,7 @@ let cardDiv = document.getElementById("card");
 // function paragraphStyle() {
 //   let paraColor = document.getElementsByTagName("p");
 //   for (let i = 0; i < paraColor.length; i++) {
-//       paraColor[1].style.color = "gray";
+//   let changeText = paraColor[1].style.color = "gray";
 //   }
 // }
 
