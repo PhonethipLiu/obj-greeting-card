@@ -63,11 +63,13 @@ console.log(childBirthday.frontMessage, childBirthday.insideMessage);
 //Output the HTML strings with classes to the DOM that you can style with CSS.
 cardDiv.innerHTML += "<div><h2>" + childBirthday.frontMessage  + "</h2>" + "<p>" + childBirthday.insideMessage + "</p></div>";
 
-var attribute = document.createAttribute("style");
-attribute.value = "{color:gray;}";
+// var attribute = document.createAttribute("style");
+// attribute.style = "{bgcolor:gray;}";
+// document.body.appendChild(attribute);
 var head2 = document.getElementsByTagName("H2")[1];
-head2.setAttributeNode(attr);
-    
+head2.style.color = "blue";
+document.body.appendChild(head2;)
+
 
 //============ adult birthday card ==============//
 const adultBirthday = Object.create(Birthday);
