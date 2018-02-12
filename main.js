@@ -10,32 +10,22 @@
 // Refactor "makeFrontMessage" to return something more elaborate.
 
 //====== Let's see it in the DOM ======//
-let cardDiv = document.getElementById("card");
-// var addClass = cardDiv.className("bday-card");
-// cardDiv.style.backgroundColor = "lightgray";
-// var paragraph = document.createAttribute("");
-// cardDiv.className = "colorBox";
-// var div = document.getElementsByTagName("DIV")[0].className;
-// var div = document.createElement('DIV');
-// document.body.appendChild(div);
-// var paragraph = document.createElement("p");
-// var newNode = document.createTextNode("This is new.");
-// paragraph.appendChild(node);
-// var element = document.getElementById("div1");
-// element.appendChild(para);
-// function paragraphStyle() {
-// let paraStyle = document.getElementsByTagName("p");
-//   for (let i = 0; i < paraColor.length; i++) {
- let changeParaStyle = cardDiv[1].style.color = "gray";
-//   }
-// }
+
+var cardDiv = document.getElementById("card_div");
+//var head = document.createElement("h2");
+// var para = document.createElement("p");
+// var messageNode = document.createTextNode("");
+// para.appendChild(messageNode);
+// cardDiv.appendChild(para);
+var style = document.createElement("STYLE");
+
 
 //====== constructor for CardMaker Object ======//
 //Refactor "makeFrontMessage" to return something more elaborate.
 const CardMaker = {
     frontMessage: function(string) {
       return `<h2>${this.frontMessage}</h2>`  
-      // console.log(this.FrontMessage)
+      //  console.log(this.FrontMessage)
     },
     insideMessage: function(string) {
       return `<p>${this.insideMessage}</p>`
@@ -56,8 +46,11 @@ Birthday.insideMessage = "Eat, drink and drink some more.....BUT please stop dri
 //mvp Output two messages, one from the front and one from the inside of the card, to the console.
 console.log(Birthday.frontMessage, Birthday.insideMessage);
 //Output the HTML strings with classes to the DOM that you can style with CSS.
-cardDiv.innerHTML += "<div><h2>" + Birthday.frontMessage  + "</h2>" + "<p>" + Birthday.insideMessage + "</p></div>";
-
+cardDiv.innerHTML += "<div><h2>" + Birthday.frontMessage + "</h2>" + "<p>" + Birthday.insideMessage + "</p></div>";
+// target the headline style; changes h3 to color red
+var addStyle = document.createTextNode("h2 {color:red;}");
+style.appendChild(addStyle);
+document.head.appendChild(style);
 
 
 //============ child birthday card ==============//
@@ -69,6 +62,12 @@ childBirthday.insideMessage = "May the fork be with you as you eat your cake.";
 console.log(childBirthday.frontMessage, childBirthday.insideMessage);
 //Output the HTML strings with classes to the DOM that you can style with CSS.
 cardDiv.innerHTML += "<div><h2>" + childBirthday.frontMessage  + "</h2>" + "<p>" + childBirthday.insideMessage + "</p></div>";
+
+var attribute = document.createAttribute("style");
+attribute.value = "{color:gray;}";
+var head2 = document.getElementsByTagName("H2")[1];
+head2.setAttributeNode(attr);
+    
 
 //============ adult birthday card ==============//
 const adultBirthday = Object.create(Birthday);
